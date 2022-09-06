@@ -15,21 +15,21 @@ jobs:
     steps:
       - checkout
       - run:
-          name: "Say hello"
-          command: "echo Hello, Alaa , great job!"
+          name: "print hello"
+          command: echo Hello
   print-world:
     docker:
       - image: cimg/base:stable
     steps:
       - checkout
       - run:
-          name: "print hello"
-          command: "echo hello nice day to study"
+          name: "print world"
+          command: echo world 
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
 workflows:
-  say-hello-workflow:
+  print-hello-workflow:
     jobs:
       - print-hello
       - print-world:
